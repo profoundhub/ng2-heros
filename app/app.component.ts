@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
-
 @Component({
   selector: 'my-app',
   template: `
@@ -67,27 +65,19 @@ import { HeroService } from './hero.service';
       border-radius: 4px 0 0 4px;
     }
   `],
-  providers: [HeroService],
-  directives: [HeroDetailComponent]
+  directives: [HeroDetailComponent],
+  providers: [HeroService]
 })
-
 export class AppComponent implements OnInit {
+  title = 'Tour of Heroes';
+  heroes: Hero[];
+  selectedHero: Hero;
+  constructor(private heroService: HeroService) { }
+  getHeroes() {
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+  }
   ngOnInit() {
-    title = 'Tour of Heroes';
-    heroes: Hero[];
-    selectedHero: Hero;
-
-    constructor(private heroService: HeroService) { };
-
-    getHeroes() {
-      this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes);
-    };
-
-    ngOnInit() {
-      this.getHeroes();
-    };
-
-    onSelect(hero: Hero) {
-      this.selectedHero = hero; }
-    };
+    this.getHeroes();
+  }
+  onSelect(hero: Hero) { this.selectedHero = hero; }
+}
