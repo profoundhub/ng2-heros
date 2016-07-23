@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 
@@ -7,7 +8,7 @@ import { HeroService } from './hero.service';
   selector: 'my-heroes',
   templateUrl: 'app/heroes.component.html',
   styleUrls: ['app/heroes.component.css'],
-  directives: [HeroDetailComponent]
+  directives: [HeroDetailComponent, ROUTER_DIRECTIVES]
 })
 export class HeroesComponent implements OnInit {
 
