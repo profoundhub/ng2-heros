@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Hero } from './hero';
-import { ActivatedRoute } from '@angular/router';
+import { HeroService } from './hero.service';
 
 @Component({
   selector: 'my-hero-detail',
@@ -10,7 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 
 export class HeroDetailComponent implements OnInit, OnDestroy {
 
-  @Input() hero: Hero;
+  OnDestroy {
+    hero: Hero;
+    sub: any;
+
+   constructor(
+     private heroService: HeroService,
+     private route: ActivatedRoute) {}
+
 
   ngOnInit() {
      this.sub = this.route.params.subscribe(params => {
@@ -19,11 +27,6 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
          .then(hero => this.hero = hero);
      });
    }
-
-  constructor(
-    private heroService: HeroService,
-    private route: ActivatedRoute) {
-  }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
