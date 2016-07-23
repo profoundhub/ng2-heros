@@ -15,4 +15,9 @@ import { HEROES } from './mock-heroes';
       );
     }
 
+    getHero(id: number) {
+      return this.getHeroes()
+        .then(heroes => heroes.find(hero => hero.id === id));
+    }
+
   }

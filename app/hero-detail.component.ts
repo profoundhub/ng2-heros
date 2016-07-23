@@ -44,4 +44,8 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
       .then(hero => this.hero = hero);
   });
 
+  goBack() {
+    window.history.back();
+  }
+
 }
