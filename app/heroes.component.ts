@@ -6,8 +6,7 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'my-heroes',
   template: `
-    <h1>{{title}}</h1>
-    <h2>My Heroes</h2>
+    <h1>{{title}}</h1>    
     <ul class="heroes">
       <li *ngFor="let hero of heroes"
         [class.selected]="hero === selectedHero"
@@ -66,7 +65,7 @@ import { HeroService } from './hero.service';
       border-radius: 4px 0 0 4px;
     }
   `],
-  directives: [HeroDetailComponent]  
+  directives: [HeroDetailComponent]
 })
 export class HeroesComponent implements OnInit {
   title = 'Tour of Heroes';
