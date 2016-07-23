@@ -9,12 +9,15 @@ const routes: RouterConfig = [
     path: 'heroes',
     component: HeroesComponent
   }, {
-  path: 'detail/:id',
-  component: HeroDetailComponent
+    path: 'detail/:id',
+    component: HeroDetailComponent
   }, {
-  path: '',
-  redirectTo: '/dashboard',
-  pathMatch: 'full'
+    path: 'detail/:id',
+    component: HeroDetailComponent
+  }, {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
   }, {
     path: 'dashboard',
     component: DashboardComponent
