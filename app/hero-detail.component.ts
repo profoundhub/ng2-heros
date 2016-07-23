@@ -8,24 +8,22 @@ import { HeroService } from './hero.service';
   selector: 'my-hero-detail',
   templateUrl: 'app/hero-detail.component.html',
 })
-
 export class HeroDetailComponent implements OnInit, OnDestroy {
+  hero: Hero;
+  sub: any;
 
-  OnDestroy {
-    hero: Hero;
-    sub: any;
-
-   constructor(
-     private heroService: HeroService,
-     private route: ActivatedRoute) {}
+  constructor(
+    private heroService: HeroService,
+    private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
-     this.sub = this.route.params.subscribe(params => {
-       let id = +params['id'];
-       this.heroService.getHero(id)
-         .then(hero => this.hero = hero);
-     });
-   }
+    this.sub = this.route.params.subscribe(params => {
+      let id = +params['id'];
+      this.heroService.getHero(id)
+        .then(hero => this.hero = hero);
+    });
+  }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
