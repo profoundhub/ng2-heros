@@ -13,6 +13,7 @@ import { HeroesComponent } from './heroes.component';
      <router-outlet></router-outlet>
    </nav>
    `,
+   styleUrls: ['app/app.component.css'],
    directives: [HeroesComponent, ROUTER_DIRECTIVES],
    providers: [HeroService]
 })
