@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Hero } from './hero';
+import { HeroService } from './hero.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -17,7 +18,8 @@ import { ActivatedRoute } from '@angular/router';
 `
 })
 
-export class HeroDetailComponent {
+export class HeroDetailComponent implements OnInit, OnDestroy {
+
   @Input() hero: Hero;
 
   constructor(
