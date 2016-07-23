@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'my-dashboard',
   templateUrl: 'app/dashboard.component.html'
+  styleUrls:  ['app/dashboard.component.css']
 })
 
 export class DashboardComponent implements OnInit {
@@ -24,5 +25,5 @@ export class DashboardComponent implements OnInit {
     let link = ['/detail', hero.id];
     this.router.navigate(link);
   }
-  
+
 }
