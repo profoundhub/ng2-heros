@@ -7,9 +7,11 @@ import { HeroesComponent } from './heroes.component';
   selector: 'my-app',
   template: `
    <h1>{{title}}</h1>
-   <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a> |
-   <a [routerLink]="['/heroes']">Heroes</a>   
-   <router-outlet></router-outlet>
+   <nav>
+     <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a> |
+     <a [routerLink]="['/heroes']">Heroes</a>
+     <router-outlet></router-outlet>
+   </nav>
    `,
    directives: [HeroesComponent, ROUTER_DIRECTIVES],
    providers: [HeroService]
