@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
 import { Hero } from './hero';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'my-hero-detail',
@@ -16,6 +18,11 @@ import { Hero } from './hero';
 })
 
 export class HeroDetailComponent {
-  @Input()
-  hero: Hero;
+  @Input() hero: Hero;
+
+  constructor(
+    private heroService: HeroService,
+    private route: ActivatedRoute) {
+  }
+
 }
