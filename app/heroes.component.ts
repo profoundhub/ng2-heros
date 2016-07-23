@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { Router } from '@angular/router';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 
