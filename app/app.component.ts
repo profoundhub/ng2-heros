@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeroService } from './hero.service';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { HeroesComponent } from './heroes.component';
+
 import './rxjs-extensions';
 
 @Component({
@@ -18,6 +19,7 @@ import './rxjs-extensions';
    directives: [HeroesComponent, ROUTER_DIRECTIVES],
    providers: [HeroService]
 })
+
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Daniel\'s Tour of Heroes';
 }
