@@ -5,8 +5,16 @@ import { HEROES } from './mock-heroes';
 @Injectable()
 
   export class HeroService {
+
+    private heroesUrl = 'app/heroes';  // URL to web api
+
+    constructor(private http: Http) { }
+
     getHeroes() {
-      return Promise.resolve(HEROES);
+      return this.http.get(this.heroesUrl)
+                 .toPromise()
+                 .then(response => response.json().data as Hero[])
+                 .catch(this.handleError);
     }
 
     getHeroesSlowly() {
