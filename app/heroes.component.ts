@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Hero } from './hero';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { Router } from '@angular/router';
+
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 
@@ -17,7 +19,9 @@ export class HeroesComponent implements OnInit {
   title = 'Our Heros';
   heroes: Hero[];
   selectedHero: Hero;
-
+  addingHero = false;
+  error: any;
+  
   constructor(
     private router: Router,
     private heroService: HeroService) { }
