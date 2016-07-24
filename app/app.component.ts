@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeroService } from './hero.service';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { HeroesComponent } from './heroes.component';
+import './rxjs-extensions';
 
 @Component({
   selector: 'my-app',
