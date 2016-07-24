@@ -54,4 +54,5 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
         })
         .catch(error => this.error = error); // TODO: Display error message
   }
+  
 }

@@ -25,12 +25,6 @@ import { Hero } from './hero';
                 .then(heroes => heroes.find(hero => hero.id === id));
     }
 
-    getHeroesSlowly() {
-      return new Promise<Hero[]>(resolve =>
-        setTimeout(() => resolve(HEROES), 2000) // 2 seconds
-      );
-    }
-
     save(hero: Hero): Promise<Hero>  {
       if (hero.id) {
         return this.put(hero);
@@ -70,7 +64,7 @@ import { Hero } from './hero';
                   .then(() => hero)
                   .catch(this.handleError);
       }
-      
+
       private handleError(error: any) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
