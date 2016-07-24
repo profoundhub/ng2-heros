@@ -1,8 +1,9 @@
 {
-  "name": "angular2-quickstart",
+  "name": "daniel-tour-of-heroes-app",
   "version": "1.0.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "description": "Daniel's Tour of Heroes NG2 App",
   "scripts": {
+    
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "docker-build": "docker build -t ng2-quickstart .",
     "docker": "npm run docker-build && docker run -it --rm -p 3000:3000 -p 3001:3001 ng2-quickstart",
@@ -19,7 +20,7 @@
     "webdriver:update": "webdriver-manager update"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniel Lim",
   "license": "ISC",
   "dependencies": {
     "@angular/common":  "2.0.0-rc.4",
