@@ -41,10 +41,6 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  goBack() {
-    window.history.back();
-  }
-
   save() {
     this.heroService
         .save(this.hero)
@@ -54,5 +50,10 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
         })
         .catch(error => this.error = error); // TODO: Display error message
   }
-  
+
+  goBack(savedHero: Hero = null) {
+    this.close.emit(savedHero);
+    if (this.navigated) { window.history.back(); }
+  }
+
 }
